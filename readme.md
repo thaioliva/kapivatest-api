@@ -1,48 +1,55 @@
-OBJETIVO
+### Setup 
+```sh
+$ git clone https://github.com/thaioliva/kapivatest-api
+$ npm install
+$ cp .env.example .env
+```
 
-Deverá construir uma API RESTful usando a tecnologia NodeJS.
+### Config
+Arquivo .env 
+- PIPEDRIVE_KEY=''
+- BLING_KEY=''
+- BLING_URL='https://bling.com.br/Api/v2'
+- PORT=3030
 
-REQUISITOS
+- DB_NAME=''
+- DB_PORT=
+- DB_USER=''
+- DB_PASSWORD=''
 
-● Criar contas testes nas plataformas Pipedrive e Bling.
+### Start server
+Em modo dev:
+```sh
+$ npm run dev
+```
+Em modo prod:
+```sh
+$ npm start
+```
 
-● Criar uma integração entre as plataformas Pipedrive e Bling. 
-(A integração deve buscar as oportunidades com status igual a ganho no Pipedrive, 
-depois inseri-las como pedido no Bling).
+API
 
-● Criar banco de dados mongo, existem serviços como MongoDB Atlas para criar de graça
+**Show User**
+----
+  Retorna json
 
-● Criar uma collection no banco de dados MongoDB agregando as oportunidades inseridas no Bling por dia e valor total.
+* **URL**
 
-● Criar endpoint para trazer os dados consolidados da collection do MongoDB.
+  / 
 
+* **Method:**
 
+  `GET`
+  
+* **Data Params**
 
-INSTRUÇÕES
+  opcional: 
+   - date : 'YYYY-MM-DD'
 
-● Desenvolva e versione o projeto usando git
+    DD: dia
+    MM:mês
+    YYYY: ano
 
-● Utilize o GitHub para hospedar o código
+* **CRON**
 
-● Enviar o link do repositório para people@linkapi.com.br
-
-
-
-O QUE SERÁ AVALIADO
-
-● Quantidade de requisitos realizados
-
-● Desacoplamento de código
-
-● Legibilidade
-
-● Boas práticas de desenvolvimento de API RESTful
-
-● Performance
-
-
-
-Qualquer dúvida pode nos contactar pela Gupy ou Whatsapp.
-
-Boa sorte!! ☺
-
+  Duas tasks disparadas na cron
